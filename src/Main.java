@@ -1,18 +1,28 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
+import java.util.ArrayList;
 
-    Fibonacci fibonacci = new Fibonacci(10,0);
+void main(String[] args) throws InterruptedException {
 
-    ArrayList<Hebra> hilos = fibonacci.crearHilos();
+       final Integer limite =10;
+        Fibonacci fibonacci = new Fibonacci(limite);
 
-    for (Hebra h : hilos) {
-        h.start();
+        ArrayList<Hebra> hilos = fibonacci.crearHilos();
+
+
+        for (Hebra h : hilos) {
+            h.start();
+        }
+
+     for (Hebra h : hilos) {
+        h.join();
+    }
+
     }
 
 
 
-    }
+
+
+
 
 
 
