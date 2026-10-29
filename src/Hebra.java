@@ -5,22 +5,21 @@ public class Hebra extends Thread {
 
     Fibonacci fibonacci;
 
-    public Hebra(Integer id, Fibonacci fibonacci) {
+    public Hebra(int id, Fibonacci fibonacci) {
         this.id = id;
         nombre = "hilo " + id;
+        this.fibonacci = fibonacci;
     }
 
     @Override
     public void run() {
-        while (fibonacci.secuencia.size() != id){
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
 
-        fibonacci.añadirValor(id,fibonacci.sumar(this.id));
+        while (fibonacci.tamanio() != id){}
+
+        int valor = fibonacci.sumar(id);
+        System.out.println("Término " + (id ) + ": " + valor);
+
+        fibonacci.aniadirValor(id,valor);
     }
 
     @Override
