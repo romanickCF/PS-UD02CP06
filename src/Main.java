@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 
-void main(String[] args) throws InterruptedException {
+void main() throws InterruptedException {
 
-       final Integer limite =10;
+        int limite =10;
+
         Fibonacci fibonacci = new Fibonacci(limite);
 
         ArrayList<Hebra> hilos = fibonacci.crearHilos();
