@@ -15,16 +15,10 @@ public class Hebra extends Thread {
     public void run() {
 
         while (fibonacci.tamanio() != id){
-
+            Thread.onSpinWait();
         }
         int valor = fibonacci.sumar(id);
         System.out.println("Término " + (id +1) + ": " + valor);
-
-        try {
-            sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         fibonacci.aniadirValor(id,valor);
     }
 

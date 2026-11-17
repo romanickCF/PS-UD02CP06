@@ -35,9 +35,6 @@ public class Fibonacci {
 
     synchronized int tamanio() { return secuencia.size(); }
 
-    synchronized int obtener(int posicion) {
-        return secuencia.get(posicion);
-    }
 
 
 
